@@ -34,7 +34,7 @@ ListItem.propTypes = {
 
 ListItem.defaultProps = {
   image: null,
-  description: "One of the React creators"
+  description: "The big one"
 };
 
 export default ListItem;
