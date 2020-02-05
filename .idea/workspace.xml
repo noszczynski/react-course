@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dcda29c-599e-4e49-9206-c665c039e53e" name="Default Changelist" comment="" />
+    <list default="true" id="3dcda29c-599e-4e49-9206-c665c039e53e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/ListWrapper/ListItem/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListWrapper/ListItem/ListItem.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +20,9 @@
         <option value="SCSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XGUBVqI8ycIUfriOGz92p2JSnL" />
   <component name="ProjectViewState">
@@ -57,6 +62,7 @@
       <updated>1580671789490</updated>
       <workItem from="1580671793143" duration="1390000" />
       <workItem from="1580673193266" duration="7343000" />
+      <workItem from="1580938266881" duration="91000" />
     </task>
     <servers />
   </component>
