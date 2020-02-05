@@ -18,7 +18,7 @@ const ListItem = ({ image, name, description, twitterLink }) => {
         <Title className={styles.itemName}>{name}</Title>
         <p className={styles.itemDescription}>{description}</p>
         <Button href={twitterLink} target="_blank">
-          visit his twitter page
+          visit twitter page
         </Button>
       </div>
     </li>
