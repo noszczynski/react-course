@@ -1,0 +1,21 @@
+.wrapper {
+  list-style: none;
+  margin-left: 50px;
+}
+
+.navItem {
+  display: inline-block;
+  margin-right: 70px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #818181;
+
+  &Active {
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
