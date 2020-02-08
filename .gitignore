@@ -43,3 +43,5 @@ logs/
 .idea/*
 .idea/
 yark.lock
+package-lock.json
+package.json
