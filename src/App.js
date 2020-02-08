@@ -5,14 +5,14 @@ import TwittersView from "./views/TwittersView/TwittersView";
 import NotesView from "./views/NotesView/NotesView";
 import ArticleView from "./views/ArticlesView/ArticleView";
 import { Switch } from "react-router";
-import Navigation from "./components/Navigation/Navigation";
+import Header from "./components/Header/Header";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <>
-          <Navigation />
+          <Header />
           <Switch>
             <Route exact path="/" component={TwittersView} />
             <Route path="/articles" component={ArticleView} />
