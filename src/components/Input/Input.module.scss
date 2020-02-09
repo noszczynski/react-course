@@ -1,3 +1,12 @@
+@keyframes appear {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
 .formItem {
   width: 100%;
   margin: 24px 0;
@@ -31,7 +40,11 @@ textarea {
   background: none;
   border-bottom: 1px solid #818181;
   padding-bottom: 10px;
-  transition:border-bottom-color .2s ease;
+  transition: border-bottom-color .2s ease;
+}
+input[type=text], textarea, label {
+  transition: transform .3s ease;
+  animation: appear .3s ease forwards;
 }
 
 textarea {

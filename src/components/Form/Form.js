@@ -4,6 +4,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Title from "../Title/Title";
 import PropTypes from "prop-types";
+import Radio from "../Radio/Radio";
 
 const types = {
     twitter: 'twitter',
@@ -36,34 +37,40 @@ class Form extends Component {
 
         return (
             <div className={styles.wrapper}>
-                <Title>{descriptions[activeOption]}</Title>
+                <Title className={styles.title}>{descriptions[activeOption]}</Title>
                 <form autoComplete="off" className={styles.form} onSubmit={submitFn}>
                     <div className={styles.checkboxWrapper}>
-                        <input
-                            type="radio"
+                        <Radio
                             id={types.twitter}
-                            onChange={() => this.handleTypeChange(types.twitter)}
+                            change={() => this.handleTypeChange(types.twitter)}
                             checked={activeOption === types.twitter}
-                        />
-                        <label className={styles.radioLabel} htmlFor={types.twitter}>Twitter</label>
-                        <input
-                            type="radio"
+                        >
+                            Twitter
+                        </Radio>
+                        <Radio
                             id={types.article}
-                            onChange={() => this.handleTypeChange(types.article)}
+                            change={() => this.handleTypeChange(types.article)}
                             checked={activeOption === types.article}
-                        />
-                        <label className={styles.radioLabel} htmlFor={types.article}>Article</label>
-                        <input
-                            type="radio"
+                        >
+                            Article
+                        </Radio>
+                        <Radio
                             id={types.note}
-                            onChange={() => this.handleTypeChange(types.note)}
+                            change={() => this.handleTypeChange(types.note)}
                             checked={activeOption === types.note}
-                        />
-                        <label className={styles.radioLabel} htmlFor={types.note}>Note</label>
+                        >
+                            Note
+                        </Radio>
                     </div>
-                    <Input type="text" name="name" maxLength={30} isRequired={true} label="Name"/>
-                    <Input type="text" name="link" isRequired={true} label="Link"/>
-                    <Input type="text" name="image" label="Image"/>
+                    <Input type="text" name="name" maxLength={30} isRequired={true} label={activeOption === types.twitter ? 'Twitter Name' : 'Title'}/>
+                    {activeOption === types.note ? null : (
+                            <Input type="text" name="link" isRequired={true} label="Link"/>
+                        )
+                    }
+                    {activeOption === types.twitter ? (
+                            <Input type="text" name="image" label="Image"/>
+                        ) : null
+                    }
                     <Input
                         tag="textarea"
                         name="description"

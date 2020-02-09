@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import styles from "./Modal.module.scss";
+import styles from "../Modal/Modal.module.scss";
 import Form from "../Form/Form";
 import PropTypes from "prop-types";
 
