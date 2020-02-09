@@ -10,5 +10,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+.radioLabel {
+  display: inline-block;
+}
+.checkboxWrapper{
+  display: flex;
 
+  input[type=radio] {
+
+  }
+
+  label {
+    margin-right: 10px;
+    font-weight: 700;
+    color: #1e58ff;
+  }
 }

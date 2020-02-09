@@ -5,10 +5,10 @@ import styles from "./Button.module.scss";
 class Button extends Component {
 
   static propTypes = {
-    type: PropTypes.string.isRequired,
     href: PropTypes.string,
     target: PropTypes.string,
     secondary: PropTypes.bool,
+    onClick: PropTypes.func,
   };
   static defaultProps = {
     href: null,
@@ -17,7 +17,7 @@ class Button extends Component {
   };
 
   render(){
-    const {href, children, secondary} = this.props;
+    const {href, children, secondary, onClick: click} = this.props;
     const buttonClass = secondary ? styles.secondary : styles.primary;
 
     return(
@@ -32,7 +32,12 @@ class Button extends Component {
                 {children}
               </a>
           ) : (
-              <button className={buttonClass}>{children}</button>
+              <button
+                  className={buttonClass}
+                  onClick={click}
+              >
+                {children}
+              </button>
           )}
         </>
     )

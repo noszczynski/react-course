@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ListWrapper from "../../components/ListWrapper/ListWrapper";
-import Form from "../../components/Form/Form";
 
 const initialStateItems = [
   {
@@ -36,9 +35,9 @@ class TwittersView extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <ListWrapper items={this.state.items} />
-      </div>
+      </>
     );
   }
 }
