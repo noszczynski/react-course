@@ -3,38 +3,43 @@ import PropTypes from "prop-types";
 import styles from "./ListItem.module.scss";
 import Button from "../../Button/Button";
 import Title from "../../Title/Title";
+import AppContext from "../../../context";
 
-const ListItem = ({ image, name, description, twitterLink }) => {
-  const ImageTag = image ? "img" : "div";
-
+const ListItem = ({ image, title, description, link }) => {
   return (
-    <li className={styles.wrapper}>
-      <ImageTag
-        src={image}
-        className={image ? styles.image : styles.imageNone}
-        alt={name}
-      />
-      <div>
-        <Title className={styles.itemName}>{name}</Title>
-        <p className={styles.itemDescription}>{description}</p>
-        <Button href={twitterLink} target="_blank">
-          visit twitter page
-        </Button>
-      </div>
-    </li>
+    <AppContext.Consumer>
+      {context => (
+        <li className={styles.wrapper}>
+          {image ? (
+            <img src={image} className={styles.image} alt={title} />
+          ) : (
+            context && <div className={styles.imageNone}></div>
+          )}
+          <div>
+            <Title className={styles.itemName}>{title}</Title>
+            <p className={styles.itemDescription}>{description}</p>
+            {link && (
+              <Button href={link} target="_blank">
+                visit twitter page
+              </Button>
+            )}
+          </div>
+        </li>
+      )}
+    </AppContext.Consumer>
   );
 };
 
 ListItem.propTypes = {
-  image: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  twitterLink: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  image: PropTypes.string
 };
 
 ListItem.defaultProps = {
-  image: null,
-  description: "The big one"
+  link: null,
+  image: null
 };
 
 export default ListItem;

@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import AppContext from "../../context";
+import ListWrapper from "../../components/ListWrapper/ListWrapper";
 
 class NotesView extends Component {
   render() {
-    return <p>This is NotesView page</p>;
+    return (
+      <AppContext.Consumer>
+        {context => <ListWrapper items={context.note} />}
+      </AppContext.Consumer>
+    );
   }
 }
 
