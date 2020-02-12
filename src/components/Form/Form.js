@@ -83,7 +83,6 @@ class Form extends Component {
                 value={this.state.title}
                 type="text"
                 name="title"
-                maxLength={30}
                 isRequired={true}
                 label={type === types.twitter ? "Twitter Name" : "Title"}
               />

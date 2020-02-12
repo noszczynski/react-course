@@ -45,3 +45,5 @@ logs/
 yark.lock
 package-lock.json
 package.json
+build/
+.netlify/
