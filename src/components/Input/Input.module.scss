@@ -1,3 +1,12 @@
+@keyframes appear {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
 .formItem {
   width: 100%;
   margin: 24px 0;
@@ -7,12 +16,12 @@
 
 .formItemBar {
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #7d7d7d;
   transition: 0.1s all;
 }
 
-label {
+.textLabel {
   color: #7d7d7d;
   position: absolute;
   top: 3px;
@@ -21,7 +30,7 @@ label {
   font-size: 16px;
 }
 
-input,
+input[type=text],
 textarea {
   color: #7d7d7d;
   font-size: 16px;
@@ -29,6 +38,13 @@ textarea {
   line-height: 22px;
   width: 100%;
   background: none;
+  border-bottom: 1px solid #818181;
+  padding-bottom: 10px;
+  transition: border-bottom-color .2s ease;
+}
+input[type=text], textarea, label {
+  transition: transform .3s ease;
+  animation: appear .3s ease forwards;
 }
 
 textarea {
@@ -36,24 +52,20 @@ textarea {
   min-height: 150px;
 }
 
-input:focus,
+input[type=text]:focus,
 textarea:focus {
   outline: none;
+  border-bottom-color: #1e58ff;
 }
 
-input:focus + label,
-textarea:focus + label {
+input[type=text]:focus + .textLabel,
+textarea:focus + .textLabel {
   top: -22px;
   font-size: 13px;
 }
 
-input:not(:placeholder-shown) + label,
-textarea:not(:placeholder-shown) + label {
+input[type=text]:not(:placeholder-shown) + .textLabel,
+textarea:not(:placeholder-shown) + .textLabel {
   top: -22px;
   font-size: 13px;
-}
-
-input:focus ~ .forms__item__bar,
-textarea:focus ~ .forms__item__bar {
-  background: #1e58ff;
 }
