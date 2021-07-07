@@ -16,7 +16,6 @@ const Input = ({ tag: Tag, name, label, maxLength, isRequired }) => (
     <label className={styles.label} htmlFor={name}>
       {label}
     </label>
-    <div className={styles.formItemBar} />
   </div>
 );
 

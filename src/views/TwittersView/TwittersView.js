@@ -38,7 +38,6 @@ class TwittersView extends Component {
     return (
       <div>
         <ListWrapper items={this.state.items} />
-        <Form submitFn={this.addItem} />
       </div>
     );
   }

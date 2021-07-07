@@ -6,6 +6,7 @@ import NotesView from "./views/NotesView/NotesView";
 import ArticleView from "./views/ArticlesView/ArticleView";
 import { Switch } from "react-router";
 import Header from "./components/Header/Header";
+import Modal from "./components/Modal/Modal";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/articles" component={ArticleView} />
             <Route path="/notes" component={NotesView} />
           </Switch>
+          <Modal />
         </>
       </BrowserRouter>
     );
